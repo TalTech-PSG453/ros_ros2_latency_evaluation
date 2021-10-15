@@ -1,0 +1,4 @@
+topic,received(#),mean[ns],max_latency,min_latency
+/motor_power/electrical_power,11,2500060114,4131623999,558433100
+/efficiency,588,15823045,17038650,174330
+/shaft_angular_velocity,0,,,

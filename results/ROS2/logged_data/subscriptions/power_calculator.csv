@@ -1,0 +1,3 @@
+topic,received(#),mean[ns],max_latency,min_latency
+/input_current,58563,347716,18525159,47574
+/input_voltage,58563,356488,18489164,57766

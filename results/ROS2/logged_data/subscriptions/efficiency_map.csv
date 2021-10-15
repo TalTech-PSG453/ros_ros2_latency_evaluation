@@ -1,0 +1,3 @@
+topic,received(#),mean[ns],max_latency,min_latency
+/electrical_torque_ref,3557,352572,12211065,71618
+/actual_rpm,3565,364128,11237504,91393

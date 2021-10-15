@@ -1,0 +1,2 @@
+topic,received(#),mean[ns],max_latency,min_latency
+/shaft_angular_velocity,0,,,

@@ -1,0 +1,58 @@
+{
+    "nodes": [
+        {
+          "node_name": "data_processor",
+          "publishers": [
+                {"topic_name": "input_voltage", "msg_type": "stamped3_float32", "period_ms": 1, "msg_pass_by":"shared_ptr"},
+                {"topic_name": "input_current", "msg_type": "stamped3_float32", "period_ms": 1, "msg_pass_by":"shared_ptr"}
+              ]
+        },
+  
+        {
+          "node_name": "power_calculator",
+          "subscribers":[
+              {"topic_name": "input_current", "msg_type": "stamped3_float32"},
+              {"topic_name": "input_voltage", "msg_type": "stamped3_float32"}
+            ],
+          "publishers": [
+              {"topic_name": "electrical_power", "msg_type": "stamped4_float32", "period_ms": 5000, "msg_pass_by":"shared_ptr"},
+              {"topic_name": "reactive_power", "msg_type": "stamped4_float32", "period_ms": 16.69, "msg_pass_by":"shared_ptr"}
+            ]
+        },
+  
+        {
+          "node_name": "torque_calculator",
+          "subscribers":[
+              {"topic_name": "electrical_power", "msg_type": "stamped4_float32"},
+              {"topic_name": "shaft_angular_velocity", "msg_type": "stamped4b"},
+              {"topic_name": "efficiency", "msg_type": "stamped4b"}
+            ],
+          "publishers": [
+              {"topic_name": "electrical_torque_ref", "msg_type": "stamped4b", "period_ms": 16.69, "msg_pass_by":"shared_ptr"},
+              {"topic_name": "mechanical_torque", "msg_type": "stamped4b", "period_ms": 16.69, "msg_pass_by": "shared_ptr"}
+            ]
+        },
+  
+        {
+          "node_name": "angular_converter",
+          "subscribers":[
+              {"topic_name": "shaft_angular_velocity", "msg_type":"stamped4b"}
+            ],
+          "publishers": [
+              {"topic_name": "actual_rpm", "msg_type": "stamped4b", "period_ms": 16.69, "msg_pass_by":"shared_ptr"}
+            ]
+        },
+  
+        {
+          "node_name": "efficiency_map",
+          "subscribers":[
+              {"topic_name": "actual_rpm", "msg_type":"stamped4b"},
+              {"topic_name": "electrical_torque_ref", "msg_type":"stamped4b"}
+            ],
+          "publishers": [
+              {"topic_name": "efficiency", "msg_type": "stamped4b", "period_ms": 100, "msg_pass_by":"shared_ptr"}
+            ]
+        }
+      ]
+  }
+  
