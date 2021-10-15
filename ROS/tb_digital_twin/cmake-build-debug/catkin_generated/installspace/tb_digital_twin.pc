@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: tb_digital_twin
+Description: Description of tb_digital_twin
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

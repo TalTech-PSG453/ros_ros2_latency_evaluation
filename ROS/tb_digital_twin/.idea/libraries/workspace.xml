@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="workspace">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../Utilities" />
+      <root url="file://$PROJECT_DIR$/../CMakeLists.txt" />
+      <root url="file://$PROJECT_DIR$/../Utilities.zip" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

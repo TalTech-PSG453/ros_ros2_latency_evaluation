@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sejego/catkin_ws/src/tb_digital_twin/cmake-build-debug/devel/setup.sh
